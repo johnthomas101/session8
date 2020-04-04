@@ -1,0 +1,174 @@
+$button-color: #f48024;
+$button-text-color: #fff;
+$nav-color: #fafafb;
+$text-font-style: "Tahoma";
+
+@mixin flexStyle($orientation) {
+    display: flex;
+    flex-direction: $orientation;
+    align-items: center;
+}
+
+body {
+    font-family: $text-font-style;
+    margin: 0px;
+    @media screen and (max-width: 375px) {
+        .header {
+            @include flexStyle(row);
+            justify-content: space-between;
+
+            height: 50px;
+            background-color: $nav-color;
+            padding: 0px 4px 0px 4px;
+            position: sticky;
+            top: 0px;
+            .headerLeft {
+                @include flexStyle(row);
+                .sandwichCont {
+                    img {
+                        width: 45px;
+                    }
+                }
+                .logoCont {
+                    img {
+                        width: 45px;
+                    }
+                }
+                .buttonsCont {
+                    .navButton {
+                        background-color: $button-color;
+                        color: $button-text-color;
+                        border-radius: 20px;
+                        padding: 8px;
+                        font-size: 0.7rem;
+                    }
+                    .navButtonWhite {
+                        display: none;
+                    }
+                }
+            }
+            .headerRight {
+                @include flexStyle(row);
+                .searchCont {
+                    img {
+                        width: 45px;
+                    }
+                    input {
+                        display: none;
+                    }
+                }
+                .buttonsRightCont {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    .squareButtonFilled {
+                        background-color: #0095ff;
+                        color: #ffffff;
+                        border-radius: 3px;
+                        padding: 8px;
+                        font-size: 0.8rem;
+                        border: 1px solid #7aa7c7;
+                    }
+                    .squareButtonEmpty {
+                        background-color: #e1ecf4;
+                        color: #39739d;
+                        border-radius: 3px;
+                        padding: 8px;
+                        font-size: 0.8rem;
+                        border: 1px solid #7aa7c7;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 376px) {
+        .header {
+            @include flexStyle(row);
+            height: 50px;
+            background-color: $nav-color;
+            padding: 0px 50px 0px 50px;
+            justify-content: space-between;
+            position: sticky;
+            top: 0px;
+            .headerLeft {
+                @include flexStyle(row);
+                flex-basis: 40%;
+                .sandwichCont {
+                    img {
+                        width: 45px;
+                    }
+                }
+                .logoCont {
+                    img {
+                        width: 45px;
+                    }
+                }
+                .buttonsCont {
+                    @include flexStyle(row);
+                    flex-grow: 1;
+                    justify-content: space-evenly;
+                    .navButton {
+                        background-color: $button-color;
+                        color: $button-text-color;
+                        border-radius: 20px;
+                        padding: 8px;
+                        font-size: 1rem;
+                    }
+                    .navButtonWhite {
+                        &:hover {
+                            background-color: grey;
+                            color: white;
+                            border-radius: 20px;
+                            padding: 8px;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+            .headerRight {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-basis: 60%;
+                .searchCont {
+                    flex-basis: 80%;
+                    img {
+                        display: none;
+                    }
+                    input {
+                        height: 30px;
+                        width: 100%;
+                        border: 1px solid #333;
+                        border-radius: 3px;
+                    }
+                }
+                .buttonsRightCont {
+                    flex-basis: 20%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    .squareButtonFilled {
+                        flex-grow: 1;
+                        background-color: #0095ff;
+                        color: #ffffff;
+                        border-radius: 3px;
+                        padding: 8px;
+                        font-size: 0.8rem;
+                        border: 1px solid #7aa7c7;
+                    }
+                    .squareButtonEmpty {
+                        flex-grow: 1;
+                        background-color: #e1ecf4;
+                        color: #39739d;
+                        border-radius: 3px;
+                        padding: 8px;
+                        font-size: 0.8rem;
+                        border: 1px solid #7aa7c7;
+                    }
+                }
+            }
+        }
+    }
+    .body {
+    }
+}
